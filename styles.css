@@ -98,10 +98,31 @@ p {
 
 .section__breaker {
     min-width: 1fr;
-    height: 5em;
+    height: 2em;
+    display: block;
     background-color: rgba(0, 0, 250, 0.6);
-    margin: 2em 0;
+    margin: 3em 0;
 }
+
+.section__breaker:before {
+    content: "";
+    display: block;
+    background-color: rgba(0, 0, 250, 0.8);
+    min-width: 1fr;
+    height: 1em;
+    
+    
+}
+
+.section__breaker:after {
+    content: "";
+    display: block;
+    background-color: rgba(0, 0, 250, 0.3);
+    height: 2em;
+    min-width: 1fr;
+
+}
+
 
 @media screen and (min-width:768px) {
     h1 {
