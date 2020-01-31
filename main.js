@@ -17,3 +17,7 @@ let month = date.getMonth()
 let year = date.getFullYear()
 
 date_placeholder.textContent = day + '.' + month+1 + '.' + year + ' r.';
+
+
+/*quote generation*/
+

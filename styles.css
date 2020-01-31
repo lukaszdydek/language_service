@@ -28,7 +28,6 @@ transition: 0.8s ease-out;
 }
 
 .menu__item {
-    text-decoration: none;
     font-family: 'Quicksand', sans-serif;
     padding: 0.2em;
     display: block;
@@ -62,7 +61,6 @@ transition: 0.8s ease-out;
 .main__goback {
     color: rgba(255, 255, 255, 0.8);
     background-color: rgba(0, 0, 250, 0.6);
-    text-decoration: none;
     padding: 0.2em;
     position: fixed;
     right: 1em;
@@ -89,8 +87,7 @@ grid-template-columns: 1fr;
     text-align: center;
 }
 
-.download__section--button {
-    text-decoration: none;
+.download__section--button { 
     background-color: rgba(0, 0, 250, 0.3);
     padding: 0.5em;
     margin: 0 1.5em;
@@ -106,6 +103,14 @@ p {
     text-align: justify;
     font-size: 1.2em;
     line-height: 1.8em;
+    margin: 0 0.5em;
+}
+
+a {
+    text-decoration: none;
+}
+
+table {
     margin: 0 0.5em;
 }
 
@@ -136,7 +141,9 @@ p {
 
 }
 
-
+footer {
+    margin: 0 0.5em;
+}
 
 
 @media screen and (min-width:768px) {
