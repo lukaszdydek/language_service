@@ -16,7 +16,10 @@ let day = date.getDate()
 let month = date.getMonth()
 let year = date.getFullYear()
 
-date_placeholder.textContent = day + '.' + month+1 + '.' + year + ' r.';
+date_placeholder.textContent = date.toLocaleDateString() + ' r.';
+
+/*'0' + day + '.' + '0' + (month + 1) + '.' + year + ' r.'; */
+
 
 
 /*quote generation*/
