@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Bangers|Quicksand&display=swap');
 
+
 body {
     margin: 0;
 }
@@ -13,8 +14,8 @@ h1 {
 .menu {
 position: absolute;
 width: 100%;
-top: -10em;
-display: block;
+top: -13.8em;
+
 text-align: center;
 margin: 0;
 background-color: rgba(0, 0, 250, 0.9);
@@ -29,6 +30,7 @@ transition: 0.8s ease-out;
 
 .menu__item {
     font-family: 'Quicksand', sans-serif;
+    font-size: 1.3em;
     padding: 0.2em;
     display: block;
     color: white;
@@ -61,11 +63,12 @@ transition: 0.8s ease-out;
 .main__goback {
     color: rgba(255, 255, 255, 0.8);
     background-color: rgba(0, 0, 250, 0.6);
-    padding: 0.2em;
+    padding: 0.6em;
     position: fixed;
     right: 1em;
     bottom: 1em;
     z-index: 2;
+    font-size: 1.2em;
 }
 
 .main__content {
@@ -74,6 +77,10 @@ top: 4em;
 display: grid;
 grid-template-columns: 1fr;
 
+}
+
+.section {
+    min-width: 100%;
 }
 
 .section__photo {
@@ -89,7 +96,7 @@ grid-template-columns: 1fr;
 
 .download__section--button { 
     background-color: rgba(0, 0, 250, 0.3);
-    padding: 0.5em;
+    padding: 0.8em;
     margin: 0 1.5em;
     border-radius: 0.2em;
 }
@@ -111,8 +118,7 @@ a {
 }
 
 table {
-    margin: 0 0.5em;
-    
+    padding: 0.5em;
 }
 
 tr {
@@ -121,6 +127,15 @@ tr {
 
 td {
     padding: 0.5em 0.5em 0.5em 0;
+}
+
+.pricelist__table {
+    margin: 0 0.5em;
+    border-radius: 0.5em;
+    border-style: solid;
+    border-color: rgba(0, 0, 250, 0.6);
+    border-width: 0.08em;
+    
 }
 
 .summary__window {
@@ -141,14 +156,15 @@ td {
 
 input, textarea, select {
     border-radius: 0.4em;
-    padding: 0.7em;
+    font-size: 1em;
+    padding: 0.8em;
     border-style: solid;
     border-color: rgba(0, 0, 250, 0.6);
     border-width: 0.08em;
 }
 
 button {
-    padding: 0.5em;
+    padding: 1.5em;
 }
 
 .section__breaker {
@@ -179,7 +195,7 @@ button {
 }
 
 footer {
-    margin: 0 0.5em;
+    margin: 0;
 }
 
 
