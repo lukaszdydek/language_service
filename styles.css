@@ -123,6 +123,22 @@ td {
     padding: 0.5em 0.5em 0.5em 0;
 }
 
+.summary__window {
+    display: none;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 1fr;
+    height: 500px;
+}
+
+.summary__window__visible {
+    display: block;
+    z-index: 4;
+    background-color: black;
+    color: blanchedalmond;
+}
+
 input, textarea, select {
     border-radius: 0.4em;
     padding: 0.7em;
