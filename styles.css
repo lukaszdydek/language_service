@@ -5,6 +5,7 @@
 
 body {
     margin: 0;
+    
 }
 
 h1 {
@@ -13,9 +14,8 @@ h1 {
 
 .menu {
 position: absolute;
-width: 100%;
+width: 100vw;
 top: -13.8em;
-
 text-align: center;
 margin: 0;
 background-color: rgba(0, 0, 250, 0.9);
@@ -80,8 +80,9 @@ grid-template-columns: 1fr;
 }
 
 .section {
-    min-width: 100%;
+    width: 100vw;
 }
+
 
 .section__photo {
     max-width: 30%;
@@ -118,7 +119,7 @@ a {
 }
 
 table {
-    padding: 0.5em;
+    padding-left: 0.5em;
 }
 
 tr {
@@ -143,7 +144,7 @@ td {
     position: sticky;
     top: 0;
     left: 0;
-    width: 1fr;
+   
     height: 500px;
 }
 
@@ -154,10 +155,10 @@ td {
     color: blanchedalmond;
 }
 
+
 input, textarea, select {
     border-radius: 0.4em;
-    font-size: 1em;
-    padding: 0.8em;
+    padding: 0.6em;
     border-style: solid;
     border-color: rgba(0, 0, 250, 0.6);
     border-width: 0.08em;
@@ -168,7 +169,7 @@ button {
 }
 
 .section__breaker {
-    min-width: 1fr;
+    
     height: 2em;
     display: block;
     background-color: rgba(0, 0, 250, 0.6);
@@ -179,7 +180,6 @@ button {
     content: "";
     display: block;
     background-color: rgba(0, 0, 250, 0.8);
-    min-width: 1fr;
     height: 1em;
     
     
@@ -190,7 +190,7 @@ button {
     display: block;
     background-color: rgba(0, 0, 250, 0.3);
     height: 2em;
-    min-width: 1fr;
+ 
 
 }
 
