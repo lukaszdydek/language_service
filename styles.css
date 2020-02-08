@@ -157,10 +157,11 @@ td {
 }
 
 .query__table {
-    align-content: center;
+    width: 100vw;
 }
 
 input, textarea, select {
+    box-sizing: border-box;
     border-radius: 0.4em;
     padding: 0.8em;
     border-style: solid;
