@@ -1,0 +1,129 @@
+<table class="query__table">
+                <form action="mailto:lukaszdydek@gmail.com" method="POST" class="form">
+                    <tr>
+                        <td>
+                            <label for="form__name">Imię</label>
+                        </td>
+                        <td>
+                            <input type="text" id="form__name" name="form__name">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="form__surname">Nazwisko</label>
+                        </td>
+                        <td>
+                            <input type="text" id="form__surname" name="form__surname">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="form__email">E-mail</label>
+                        </td>
+                        <td>
+                            <input type="email" id="form__email" name="form__email">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="form__phone">Telefon</label>
+                        </td>
+                        <td>
+                            <input type="tel" id="form__phone" name="form__phone">
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <label for="form__service">Usługa</label>
+                        </td>
+                        <td>
+                            <select name="form__service" id="form__service">
+                                <option value=""></option>
+                                <option value="Tłumaczenie">Tłumaczenie</option>
+                                <option value="Korekta">Korekta</option>
+                                <option value="Napisy">Napisy</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="form__wordcount">Liczba słów</label>
+                        </td>
+                        <td>
+                            <input type="number" id="form__wordcount" name="form__wordcount">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="form__captions">Czas trwania filmu</label>
+                        </td>
+                        <td>
+                            <input type="time" name="form__captions" id="form__captions">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Stopień zaawansowania</label>
+                        </td>
+                        <td>
+                            <input type="radio" name="form__complexity" value="Tekst ogólny" id="form__complexity--general"><label>Tekst
+                                ogólny</label><br>
+                            <input type="radio" name="form__complexity" value="Tekst specjalistyczny" id="form__complexity--specialized"><label>Tekst
+                                specjalistyczny</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="form__speed">Tryb wykonania</label>
+                        </td>
+                        <td>
+                            <select id="form__speed" name="form__speed">
+                                <option value=""></option>
+                                <option value="Normalny">Normalny</option>
+                                <option value="Ekspresowy">Ekspresowy</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="form__deadline">Termin wykonania usługi </label>
+                        </td>
+                        <td>
+                            <input type="date" id="form__deadline">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="form__file">Plik do przetłumaczenia</label>
+                        </td>
+                        <td>
+                            <input type="file" id="form__file" style="width: 90px">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="form__remarks">Dodatkowe uwagi (opcjonalnie)</label>
+                        </td>
+                        <td>
+                            <textarea id="form__remarks"></textarea>
+                        </td>
+                    </tr>
+                    <tr style="vertical-align: bottom;">
+                        <td style="column-span: 2;">
+                            <input type="submit" value="Wyślij" class="form__button">
+                        </td>
+                    </tr>
+                </form>
+            </table>
