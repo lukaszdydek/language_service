@@ -142,18 +142,25 @@ td {
 
 .summary__window {
     display: none;
-    position: sticky;
-    top: 0;
-    left: 0;
+    transition: 0.8s ease-out;
    
-    height: 500px;
 }
 
 .summary__window__visible {
     display: block;
-    z-index: 4;
-    background-color: black;
-    color: blanchedalmond;
+    position: fixed;
+    width: 80%;
+    height: 80%;
+    top: 5%;
+    left: 5%;
+    margin: 5% auto;
+    padding: 0.5em;
+    border: solid rgba(0, 0, 250, 0.6) 0.40em;
+    border-radius: 0.4em;
+    z-index: 6;
+    background-color: white;
+    color: black;
+    transition: 0.8s ease-out;
 }
 
 .query__table {

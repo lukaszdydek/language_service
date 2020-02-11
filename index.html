@@ -201,7 +201,22 @@
 
             <h2 id="wycena">Wycena</h2>
             <h4>Dokonaj orientacyjnej wyceny żądanej usługi</h4>
-            <div class="summary__window"></div>
+            
+            <!--Summary window-->
+            
+            <div class="summary__window">
+                <h3>Podsumowanie Twojej wyceny</h3>
+                <h4>Dane wyceniającego:</h4>
+                <p class="summary__window--submitter"></p>
+
+                <h4>Dane wyceny:</h4>
+                <p class="summary__window--query"></p>
+
+                <button class="summary__window--button">OK</button>
+            </div>
+            
+<!--QUery form-->
+
             <h6>Aby dokonać wyceny, skorzystaj z poniższego formularza.</h6>
             <table class="query__table">
                 <form action="mailto:lukaszdydek@gmail.com" method="POST" class="form">
@@ -264,9 +279,11 @@
                         <td>
                             <label>Stopień zaawansowania</label>
                             <br>
-                            <input type="radio" name="form__complexity" value="Tekst ogólny" id="form__complexity--general"><label>Tekst
+                            <input type="radio" name="form__complexity" value="Tekst ogólny"
+                                id="form__complexity--general"><label>Tekst
                                 ogólny</label>
-                            <input type="radio" name="form__complexity" value="Tekst specjalistyczny" id="form__complexity--specialized"><label>Tekst
+                            <input type="radio" name="form__complexity" value="Tekst specjalistyczny"
+                                id="form__complexity--specialized"><label>Tekst
                                 specjalistyczny</label>
                         </td>
                     </tr>

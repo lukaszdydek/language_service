@@ -64,10 +64,21 @@ let file = document.getElementById('form__file');
 let remarks = document.getElementById('form__remarks'); 
 
 
-const summary__window = document.querySelector('.summary__window');
+
 */
 
+
+
 for (i = 0; i < formTextNodes.length - 1; i++) {
+
+    /* validating the form
+    if (formTextNodes[i].required && formTextNodes[i].value === '') {
+        alert('Wypełnij wymagane pola!');
+        return;
+    };
+*/
+    /*populating the "query_data" object with form data*/
+
     let formTextNodesIds = formTextNodes[i].getAttribute('id');
     let formTextNodeValues = formTextNodes[i].value;
     query_data[formTextNodesIds] = formTextNodeValues;
@@ -77,15 +88,37 @@ for (i = 0; i < formTextNodes.length - 1; i++) {
 
     if (complexity__general.checked) {
         query_data[complexity__general.id] = complexity__general.value;
+        delete query_data['form__complexity--specialized'];
     }
 
     if (complexity__specialized.checked) {
         query_data[complexity__specialized.id] = complexity__specialized.value;
+        delete query_data['form__complexity--general'];
+
     }
-
-
 };
 
+/*Popup window on clicking form submit button - formatting & content*/
+
+let submitter = document.querySelector('.summary__window--submitter');
+submitter.textContent = 'Dokonujesz wyceny jako ' + query_data.form__name + ' ' + query_data.form__surname + '. Twój adres e-mail to ' + query_data.form__email + ', a numer telefonu to ' + query_data.form__phone + '.';
+
+/*Displaying the pop-up window on clicking form submit button*/
+
+const summary__window = document.querySelector('.summary__window');
+summary__window.classList.toggle('summary__window__visible');
 }
+
 );
+
+/*Button closing the pop-up window*/
+
+const summary__window = document.querySelector('.summary__window')
+const summary__button = document.querySelector('.summary__window--button');
+
+summary__button.addEventListener('click', function() {
+summary__window.classList.replace('summary__window__visible', 'summary__window');}
+);
+
+
 
