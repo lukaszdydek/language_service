@@ -41,6 +41,26 @@ let complexity__specialized = document.getElementById('form__complexity--special
 /*textarea field*/
 let remarks = document.getElementById('form__remarks');
 
+/*visibiliy/invisibiliy of form items depending on the chosen service*/
+
+service.addEventListener('click', function() {
+
+    const wordcount__item = document.querySelector('.form__wordcount__invisible');
+    const captionsTime__item = document.querySelector('.form__captions__invisible');
+
+    if (service.value === "Tłumaczenie" || service.value === "Korekta") {
+        wordcount__item.classList.toggle("form__wordcount__visible");
+    }
+    
+    if (service.value === "Napisy") {
+        captionsTime__item.classList.toggle("form__captions__visible");
+    }
+
+})
+
+
+
+
 /*query Object*/
 let query_data = {};
 
@@ -48,26 +68,30 @@ const button = document.querySelector('.form__button');
 
 button.addEventListener('click', function() {
 
-/* let name = document.getElementById('form__name').value;
-let surname = document.getElementById('form__surname').value;
-let email = document.getElementById('form__email').value;
+/*quote calculation*/
 
-let phone = document.getElementById('form__phone');
-let service = document.getElementById('form__service');
-let wordcount = document.getElementById('form__wordcount');
-let captions = document.getElementById('form__captions');
-let complexity__general = document.getElementById('form__complexity--general')
-let complexity__specialized = document.getElementById('form__complexity--specialized')
-let speed = document.getElementById('form__speed');
-let deadline = document.getElementById('form__deadline');
-let file = document.getElementById('form__file');
-let remarks = document.getElementById('form__remarks'); 
+function queryCalculate() {
 
+    let wordcount = document.getElementById('form__wordcount');
 
+    if (service.value === "Tłumaczenie" && complexity__specialized.checked && speed.value === "Ekspresowy") {
+        return ((wordcount.value * 0.14) + 2) * 1.5;
+     }
 
-*/
+     if (service.value === "Tłumaczenie" && speed.value === "Ekspresowy") {
+        return (wordcount.value * 0.14) * 1.5;
+    }
 
+    if (service.value === "Tłumaczenie" && complexity__specialized.checked) {
+       return (wordcount.value * 0.14) + 2;
+    }
 
+    if (service.value === "Tłumaczenie") {
+        return wordcount.value * 0.14;
+    }
+
+    
+} 
 
 for (i = 0; i < formTextNodes.length - 1; i++) {
 
@@ -101,7 +125,19 @@ for (i = 0; i < formTextNodes.length - 1; i++) {
 /*Popup window on clicking form submit button - formatting & content*/
 
 let submitter = document.querySelector('.summary__window--submitter');
-submitter.textContent = 'Dokonujesz wyceny jako ' + query_data.form__name + ' ' + query_data.form__surname + '. Twój adres e-mail to ' + query_data.form__email + ', a numer telefonu to ' + query_data.form__phone + '.';
+
+if (query_data.form__surname === "" && query_data.form__phone === "") {
+    submitter.textContent = 'Dokonujesz wyceny jako ' + query_data.form__name + '. Twój adres e-mail to ' + query_data.form__email + '.';
+} else if (query_data.form__surname === "") {
+    submitter.textContent = 'Dokonujesz wyceny jako ' + query_data.form__name + '. Twój adres e-mail to ' + query_data.form__email + ', a numer telefonu to ' + query_data.form__phone + '.';
+} else if (query_data.form__phone === "") {
+    submitter.textContent = 'Dokonujesz wyceny jako ' + query_data.form__name + ' ' + query_data.form__surname + '. Twój adres e-mail to ' + query_data.form__email + '.';
+} else {
+    submitter.textContent = 'Dokonujesz wyceny jako ' + query_data.form__name + ' ' + query_data.form__surname + '. Twój adres e-mail to ' + query_data.form__email + ', a numer telefonu to ' + query_data.form__phone + '.';
+};
+
+const submitter__query = document.querySelector('.summary__window--query');
+submitter__query.textContent = queryCalculate();
 
 /*Displaying the pop-up window on clicking form submit button*/
 
