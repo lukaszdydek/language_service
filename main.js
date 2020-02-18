@@ -32,6 +32,10 @@ let formTextNodes = formTable.querySelectorAll('input');
 
 /*service dropdown*/
 let service = document.getElementById('form__service');
+
+/*direction dropdown*/
+let direction = document.getElementById('form__direction');
+
 /*service speed dropdown*/
 let speed = document.getElementById('form__speed');
 
@@ -41,19 +45,25 @@ let complexity__specialized = document.getElementById('form__complexity--special
 /*textarea field*/
 let remarks = document.getElementById('form__remarks');
 
+
+
 /*visibiliy/invisibiliy of form items depending on the chosen service*/
 
-service.addEventListener('click', function() {
+service.addEventListener('change', function() {
 
     const wordcount__item = document.querySelector('.form__wordcount__invisible');
     const captionsTime__item = document.querySelector('.form__captions__invisible');
 
     if (service.value === "Tłumaczenie" || service.value === "Korekta") {
-        wordcount__item.classList.toggle("form__wordcount__visible");
-    }
-    
-    if (service.value === "Napisy") {
-        captionsTime__item.classList.toggle("form__captions__visible");
+        wordcount__item.classList.add("form__wordcount__visible");
+        captionsTime__item.classList.remove('form__captions__visible');
+
+    } else if (service.value === "Napisy") {
+        captionsTime__item.classList.add("form__captions__visible");
+        wordcount__item.classList.remove('form__wordcount__visible');
+    } else {
+        wordcount__item.classList.remove('form__wordcount__visible');
+        captionsTime__item.classList.remove('form__captions__visible');
     }
 
 })
@@ -68,26 +78,114 @@ const button = document.querySelector('.form__button');
 
 button.addEventListener('click', function() {
 
+
 /*quote calculation*/
 
 function queryCalculate() {
 
+    /*translation job calculation*/
     let wordcount = document.getElementById('form__wordcount');
 
-    if (service.value === "Tłumaczenie" && complexity__specialized.checked && speed.value === "Ekspresowy") {
-        return ((wordcount.value * 0.14) + 2) * 1.5;
+    if (service.value === "Tłumaczenie" && direction.value === "polski > angielski" && complexity__specialized.checked && speed.value === "Ekspresowy") {
+        return Math.round(((wordcount.value * 0.16) + 2) * 1.5);
      }
 
+    if (service.value === "Tłumaczenie" && complexity__specialized.checked && speed.value === "Ekspresowy") {
+        return Math.round(((wordcount.value * 0.14) + 2) * 1.5);
+     }
+
+     if (service.value === "Tłumaczenie" && direction.value === "polski > angielski" && speed.value === "Ekspresowy") {
+        return Math.round((wordcount.value * 0.16) * 1.5);
+    }
+
      if (service.value === "Tłumaczenie" && speed.value === "Ekspresowy") {
-        return (wordcount.value * 0.14) * 1.5;
+        return Math.round((wordcount.value * 0.14) * 1.5);
+    }
+
+    if (service.value === "Tłumaczenie" && direction.value === "polski > angielski" && complexity__specialized.checked) {
+        return Math.round((wordcount.value * 0.16) + 2);
     }
 
     if (service.value === "Tłumaczenie" && complexity__specialized.checked) {
-       return (wordcount.value * 0.14) + 2;
+       return Math.round((wordcount.value * 0.14) + 2);
+    }
+
+    if (service.value === "Tłumaczenie" && direction.value === "polski > angielski") {
+        return Math.round(wordcount.value * 0.16);
     }
 
     if (service.value === "Tłumaczenie") {
-        return wordcount.value * 0.14;
+        return Math.round(wordcount.value * 0.14);
+    }
+
+    /*revision job calculation*/
+    if (service.value === "Korekta" && direction.value === "polski > angielski"  && complexity__specialized.checked && speed.value === "Ekspresowy") {
+        return Math.round(((wordcount.value * 0.08) + 2) * 1.5);
+     }
+    
+    if (service.value === "Korekta" && complexity__specialized.checked && speed.value === "Ekspresowy") {
+        return Math.round(((wordcount.value * 0.07) + 2) * 1.5);
+     }
+
+     if (service.value === "Korekta" && direction.value === "polski > angielski" && speed.value === "Ekspresowy") {
+        return Math.round((wordcount.value * 0.08) * 1.5);
+    }
+
+     if (service.value === "Korekta" && speed.value === "Ekspresowy") {
+        return Math.round((wordcount.value * 0.07) * 1.5);
+    }
+
+    if (service.value === "Korekta" && direction.value === "polski > angielski" && complexity__specialized.checked) {
+        return Math.round((wordcount.value * 0.08) + 2);
+     }
+
+    if (service.value === "Korekta" && complexity__specialized.checked) {
+       return Math.round((wordcount.value * 0.07) + 2);
+    }
+
+    if (service.value === "Korekta" && direction.value === "polski > angielski") {
+        return Math.round(wordcount.value * 0.08);
+    }
+
+    if (service.value === "Korekta") {
+        return Math.round(wordcount.value * 0.07);
+    }
+
+
+    /*subtitling job calculation*/
+    let captions = document.getElementById('form__captions');
+    let timeToNumber = captions.valueAsNumber/60000;
+
+    if (service.value === "Napisy" && direction.value === "polski > angielski" && complexity__specialized.checked && speed.value === "Ekspresowy") {
+        return Math.round(((timeToNumber * 0.67) + 2) * 1.5);
+     }
+
+    if (service.value === "Napisy" && complexity__specialized.checked && speed.value === "Ekspresowy") {
+        return Math.round(((timeToNumber * 0.58) + 2) * 1.5);
+     }
+
+     if (service.value === "Napisy" && direction.value === "polski > angielski" && speed.value === "Ekspresowy") {
+        return Math.round((timeToNumber * 0.67) * 1.5);
+    }
+
+     if (service.value === "Napisy" && speed.value === "Ekspresowy") {
+        return Math.round((timeToNumber * 0.58) * 1.5);
+    }
+
+    if (service.value === "Napisy" && direction.value === "polski > angielski" && complexity__specialized.checked) {
+        return Math.round((timeToNumber * 0.67) + 2);
+     }
+
+    if (service.value === "Napisy" && complexity__specialized.checked) {
+       return Math.round((timeToNumber * 0.58) + 2);
+    }
+
+    if (service.value === "Napisy" && direction.value === "polski > angielski") {
+        return Math.round(timeToNumber * 0.67);
+    }
+
+    if (service.value === "Napisy") {
+        return Math.round(timeToNumber * 0.58);
     }
 
     
@@ -106,6 +204,7 @@ for (i = 0; i < formTextNodes.length - 1; i++) {
     let formTextNodesIds = formTextNodes[i].getAttribute('id');
     let formTextNodeValues = formTextNodes[i].value;
     query_data[formTextNodesIds] = formTextNodeValues;
+    query_data[direction.id] = direction.value;
     query_data[service.id] = service.value;
     query_data[speed.id] = speed.value;
     query_data[remarks.id] = remarks.value;
@@ -122,6 +221,9 @@ for (i = 0; i < formTextNodes.length - 1; i++) {
     }
 };
 
+
+
+
 /*Popup window on clicking form submit button - formatting & content*/
 
 let submitter = document.querySelector('.summary__window--submitter');
@@ -137,7 +239,7 @@ if (query_data.form__surname === "" && query_data.form__phone === "") {
 };
 
 const submitter__query = document.querySelector('.summary__window--query');
-submitter__query.textContent = queryCalculate();
+submitter__query.textContent = 'Wartość twojej wyceny to: ' + queryCalculate() + ' PLN';
 
 /*Displaying the pop-up window on clicking form submit button*/
 

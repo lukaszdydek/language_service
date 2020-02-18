@@ -2,9 +2,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Bangers|Quicksand&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
+    
     
 }
 
@@ -177,6 +181,11 @@ input, textarea, select {
    
     justify-content: center;
     font-size: 1em;
+}
+
+.required::after {
+    content: " *";
+    color: red;
 }
 
 .form__wordcount__invisible {

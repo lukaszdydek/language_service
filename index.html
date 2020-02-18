@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#0000FA">
     <title>Language Service Łukasz Dydek</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -202,7 +203,9 @@
             <h2 id="wycena">Wycena</h2>
             <h4>Dokonaj orientacyjnej wyceny żądanej usługi</h4>
             
-            <!--Summary window-->
+
+
+ <!--Summary window-->
             
             <div class="summary__window">
                 <h3>Podsumowanie Twojej wyceny</h3>
@@ -215,14 +218,16 @@
                 <button class="summary__window--button">OK</button>
             </div>
             
-<!--QUery form-->
+
+
+<!--Query form-->
 
             <h6>Aby dokonać wyceny, skorzystaj z poniższego formularza.</h6>
             <table class="query__table">
                 <form action="mailto:lukaszdydek@gmail.com" method="POST" class="form">
                     <tr>
                         <td>
-                            <label for="form__name">Imię</label><br>
+                            <label for="form__name" class="required">Imię</label><br>
                             <input type="text" id="form__name" name="form__name">
                         </td>
                     </tr>
@@ -236,7 +241,7 @@
 
                     <tr>
                         <td>
-                            <label for="form__email">E-mail</label><br>
+                            <label for="form__email" class="required">E-mail</label><br>
                             <input type="email" id="form__email" name="form__email">
                         </td>
                     </tr>
@@ -251,7 +256,7 @@
 
                     <tr>
                         <td>
-                            <label for="form__service">Usługa</label><br>
+                            <label for="form__service" class="required">Usługa</label><br>
                             <select name="form__service" id="form__service">
                                 <option value=""></option>
                                 <option value="Tłumaczenie">Tłumaczenie</option>
@@ -263,15 +268,26 @@
 
                     <tr class="form__wordcount__invisible">
                         <td>
-                            <label for="form__wordcount">Liczba słów</label><br>
+                            <label for="form__wordcount" class="required">Liczba słów</label><br>
                             <input type="number" id="form__wordcount" name="form__wordcount">
                         </td>
                     </tr>
 
                     <tr class="form__captions__invisible">
                         <td>
-                            <label for="form__captions">Czas trwania filmu</label><br>
+                            <label for="form__captions" class="required">Czas trwania filmu</label><br>
                             <input type="time" name="form__captions" id="form__captions">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="form__direction" class="required">Kierunek tłumaczenia</label><br>
+                            <select name="form__direction" id="form__direction">
+                                <option value=""></option>
+                                <option value="angielski > polski">angielski > polski</option>
+                                <option value="polski > angielski">polski > angielski</option>
+                            </select>
                         </td>
                     </tr>
 
@@ -326,6 +342,8 @@
                     </tr>
                 </form>
             </table>
+            <h5>Uwaga: Pola oznaczone czerwoną gwiazdką (<span style="color: red;">*</span>) są obowiązkowe.</h5>
+            <h5>Pola &bdquo;Stopień zaawansowania&rdquo; i &bdquo;Tryb wykonania&rdquo; nie są co prawda obowiązkowe. Mimo to, w celu uzyskania bardziej precyzyjnej kwoty wyceny, zalecam z nich skorzystać.</h5>
         </div>
 
 
