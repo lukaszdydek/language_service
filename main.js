@@ -7,6 +7,13 @@ menu.addEventListener('click', function () {
 );
 
 
+/*progress bar*/
+const progress__bar = document.querySelector('.progress__bar');
+progress__bar.addEventListener('scroll', function() {
+    
+})
+
+
 /*date insertion under the pricelist table*/
 
 let date = new Date();
@@ -238,8 +245,15 @@ if (query_data.form__surname === "" && query_data.form__phone === "") {
     submitter.textContent = 'Dokonujesz wyceny jako ' + query_data.form__name + ' ' + query_data.form__surname + '. Twój adres e-mail to ' + query_data.form__email + ', a numer telefonu to ' + query_data.form__phone + '.';
 };
 
+
 const submitter__query = document.querySelector('.summary__window--query');
-submitter__query.textContent = 'Wartość twojej wyceny to: ' + queryCalculate() + ' PLN';
+
+submitter__query.textContent = 'Wybrana usługa to ' + query_data.form__service.toLowerCase() + '.';
+
+
+const submitter__price = document.querySelector('.summary__window--price');
+
+submitter__price.textContent = 'Wartość twojej wyceny to: ' + queryCalculate() + ' PLN';
 
 /*Displaying the pop-up window on clicking form submit button*/
 

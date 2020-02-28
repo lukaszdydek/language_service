@@ -1,35 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
-
 @import url('https://fonts.googleapis.com/css?family=Bangers|Quicksand&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
 html {
     scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    
-    
 }
 
-h1 {
-    display:none;
+.top__line {
+    display: none;
 }
 
 .menu {
-position: absolute;
-width: 108vw;
-top: -13.8em;
-text-align: center;
-margin: 0;
-background-color: rgba(0, 0, 250, 0.9);
-z-index: 2;
-transition: 0.8s ease-out;
+    position: absolute;
+    width: 108vw;
+    top: -13.8em;
+    text-align: center;
+    margin: 0;
+    background-color: rgba(0, 0, 250, 0.9);
+    z-index: 2;
+    transition: 0.8s ease-in-out;
 }
 
 .menu__clicked {
-top: 0em;
-transition: 0.8s ease-out;
+    top: 0em;
+    transition: 0.8s ease-out;
 }
 
 .menu__item {
@@ -40,7 +37,6 @@ transition: 0.8s ease-out;
     color: white;
     max-width: max-content;
     margin: 0 auto;
-    
 }
 
 .menu__item:hover {
@@ -61,7 +57,6 @@ transition: 0.8s ease-out;
     padding-top: 1em;
     padding-bottom: 0.5em;
     margin: 0;
-
 }
 
 .main__goback {
@@ -76,12 +71,10 @@ transition: 0.8s ease-out;
 }
 
 .main__content {
-position: relative;
-top: 4em;
-display: grid;
-grid-template-columns: 1fr;
-
-
+    position: relative;
+    top: 4em;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .section {
@@ -91,26 +84,23 @@ grid-template-columns: 1fr;
     padding-right: 0.8em;
 }
 
-
 .section__photo {
     max-width: 30%;
     border-radius: 50%;
-    float: left;
     padding: 0 0.5em 0 0.5em;
+    float: left;
 }
 
 .download__section {
     text-align: center;
 }
 
-.download__section--button { 
+.download__section--button {
     background-color: rgba(0, 0, 250, 0.3);
     padding: 0.8em;
     margin: 0 1.5em;
     border-radius: 0.2em;
 }
-
-
 
 p {
     text-indent: 2em;
@@ -137,17 +127,15 @@ td {
 
 .pricelist__table {
     margin: 0;
-    border-radius: 0.5em;
+    border-radius: 0.2em;
     border-style: solid;
     border-color: rgba(0, 0, 250, 0.6);
     border-width: 0.08em;
-    
 }
 
 .summary__window {
     display: none;
     transition: 0.8s ease-out;
-   
 }
 
 .summary__window__visible {
@@ -160,11 +148,19 @@ td {
     margin: 5% auto;
     padding: 0.5em;
     border: solid rgba(0, 0, 250, 0.6) 0.40em;
-    border-radius: 0.4em;
+    border-radius: 0.2em;
     z-index: 6;
     background-color: white;
     color: black;
     transition: 0.8s ease-out;
+}
+
+.summary__window__visible p {
+    text-indent: 0;
+}
+
+.summary__window--heading {
+    text-align: center;
 }
 
 .query__table {
@@ -173,12 +169,11 @@ td {
 
 input, textarea, select {
     box-sizing: border-box;
-    border-radius: 0.4em;
+    border-radius: 1em;
     padding: 0.8em;
     border-style: solid;
     border-color: rgba(0, 0, 250, 0.6);
     border-width: 0.08em;
-   
     justify-content: center;
     font-size: 1em;
 }
@@ -189,19 +184,21 @@ input, textarea, select {
 }
 
 .form__wordcount__invisible {
-display: none;
+    display: none;
 }
 
 .form__wordcount__visible {
-display: block;
+    display: inline;
+    margin: 0 auto;
 }
 
 .form__captions__invisible {
-display: none;
+    display: none;
 }
 
 .form__captions__visible {
-display: block;
+    display: inline;
+    margin: 0 auto;
 }
 
 button {
@@ -209,7 +206,6 @@ button {
 }
 
 .section__breaker {
-    
     height: 2em;
     display: block;
     background-color: rgba(0, 0, 250, 0.6);
@@ -221,8 +217,6 @@ button {
     display: block;
     background-color: rgba(0, 0, 250, 0.8);
     height: 1em;
-    
-    
 }
 
 .section__breaker:after {
@@ -230,21 +224,198 @@ button {
     display: block;
     background-color: rgba(0, 0, 250, 0.3);
     height: 2em;
- 
-
 }
 
 footer {
     margin: 0 0.8em;
 }
 
-
 @media screen and (min-width:768px) {
-    h1 {
-        display:block;
+    body {
+        background-image: url(images/background.jpg);
+        background-size: 100vw 100vh;
+        background-attachment: fixed;
+        width: 100%;
+        margin: 0;
     }
-
+    .top__line {
+        display: flex;
+        flex-direction: row;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 1em;
+        margin: 0;
+    }
+    .top__line--logo {
+        padding-left: 1em;
+        height: 40px;
+        z-index: 4;
+    }
+    .top__line--contact {
+        position: absolute;
+        display: inline-block;
+        font-family: 'Dosis', 'Arial';
+        font-size: 0.8em;
+        align-self: right;
+        margin-right: 0.3em;
+        right: 16px;
+    }
+    .top__line--contact p {
+        margin: 0;
+    }
+    .top__line--contact a {
+        color: snow;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+    }
+    .top__line--contact a:hover {
+        border-bottom: solid rgb(0, 0, 250) 3px;
+    }
+    h1 {
+        display: inline;
+        padding: 1em;
+        z-index: 3;
+        color: white;
+        font-family: 'Dosis', 'Arial';
+    }
+    .menu {
+        left: 0;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: sticky;
+        padding: 1em 0;
+        width: 100%;
+        margin: 0;
+    }
     .menu__item {
         display: inline;
+        padding: 0.4em;
+        margin: 0 0.6em;
+        color: white;
+    }
+    .menu__item:hover {
+        color: white;
+        border-bottom: solid rgb(0, 0, 250) 3px;
+    }
+    #wycena__style {
+        background-color: rgba(0, 0, 250, 0.9);
+        padding: 0.4em;
+        border-radius: 0.2em;
+    }
+    #wycena__style:hover {
+        border-bottom: solid white 2px;
+        border-spacing: 20%;
+    }
+    .menu__title {
+        display: none;
+    }
+    .progress__bar {
+        position: sticky;
+        top: 59px;
+        background-color: rgb(0, 0, 250);
+        height: 5px;
+        width: 0;
+        z-index: 5;
+    }
+
+    .main__goback {
+        display: none;
+    }
+    .main__content {
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        margin: -5em 0 0 0;
+        padding: 0;
+    }
+    .section {
+        width: 60vw;
+        margin: 0 auto;
+    }
+    h2 {
+        font-family: 'Dosis', 'Arial';
+        font-size: 4em;
+        color: lightgray;
+        text-align: left;
+        width: fit-content;
+        padding-top: 59px;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+        border-bottom: solid rgba(0, 0, 250, 0.9) 5px;
+        margin-top: 0;
+        margin-bottom: 0.1em;
+    }
+    p, h3, h4, h5 {
+        color: snow;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: left;
+    }
+    h3 {
+        font-size: 2em;
+    }
+    h4 {
+        margin-top: 0;
+        margin-bottom: 2em;
+    }
+    .download__section--button {
+        border: solid snow 3px;
+        border-radius: 1em;
+        color: snow;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: transparent;
+    }
+    .download__section--button:hover {
+        background-color: rgb(0, 0, 250);
+        transition: ease-in-out 0.4s;
+    }
+    .section__breaker {
+        display: none;
+    }
+    .pricelist__table {
+        color: snow;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5em;
+        margin: 0 auto;
+        border: solid snow;
+    }
+    .query__table {
+        width: 60vw;
+        margin: 0 auto;
+        text-align: center;
+        color: snow;
+    }
+    select:hover {
+        color: black;
+    }
+    select {
+        width: 25vw;
+        background-color: transparent;
+        border: solid snow;
+        color: snow;
+    }
+    input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+        -webkit-text-fill-color: snow;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+    input, textarea {
+        width: 25vw;
+        background-color: transparent;
+        border: solid snow;
+        color: snow;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+   
+    label {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .form__button {
+        width: 8vw;
+        color: snow;
+    }
+    .form__button:hover {
+        background-color: rgb(0, 0, 250);
+        transition: ease-in-out 0.4s;
+    }
+    footer {
+        color: snow;
+        z-index: 4;
     }
 }

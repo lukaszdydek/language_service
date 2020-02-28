@@ -11,7 +11,17 @@
 </head>
 
 <body>
-    <h1 id="top_heading">Language Service Łukasz Dydek</h1>
+    <div class="top__line">
+        <div><img class='top__line--logo' src="images/Logo.jpg"></div>
+        <div>
+            <h1 id="top_heading">Language Service Łukasz Dydek</h1>
+        </div>
+        <div class="top__line--contact">
+            <p>Telefon: <a href="tel:+48796234442">(+48)796234442</a></p>
+            <p>E-mail: <a href="mailto:lukaszdydek@gmail.com">lukaszdydek@gmail.com</a></p>
+        </div>
+
+    </div>
 
 
     <div class="menu">
@@ -19,20 +29,22 @@
         <a href="#o_mnie" class="menu__item">O MNIE</a>
         <a href="#uslugi" class="menu__item">USŁUGI</a>
         <a href="#cennik" class="menu__item">CENNIK</a>
-        <a href="#wycena" class="menu__item">WYCENA</a>
+        <a href="#wycena" class="menu__item" id="wycena__style">WYCENA</a>
         <a href="#kontakt" class="menu__item">KONTAKT</a>
         <p id="top" class="menu__title">MENU</p>
     </div>
+
+    <div class="progress__bar"></div>
 
     <a href="#top" class="main__goback">Wróć</a>
     <div class="main__content">
 
         <div class="section">
-            <h2 id="poczatek">Początek</h2>
+            <h2 id="poczatek">WITAJ!</h2>
             <h4>Garść wstępnych informacji</h4>
             <article>
                 <img src="images/zdjecie4.jpg" alt="Zdjęcie przedstawiające Łukasza Dydka" class="section__photo">
-                <p style="text-indent: 0;">Witaj! Nazywam się Łukasz Dydek i&nbsp;jestem tłumaczem technicznego jezyka
+                <p>Nazywam się Łukasz Dydek i&nbsp;jestem tłumaczem technicznego jezyka
                     angielskiego. Znajdziesz tu wszystko, co niezbędne na temat mojej działalności i&nbsp;świadczonych
                     przeze mnie usług. Poszczególne informacje są dostępne po kliknięciu odpowiednich pozycji menu.
                     Zapraszam w podróż po mojej witrynie &mdash; najpierw dowiesz się kim jestem, następnie co robię
@@ -54,7 +66,7 @@
         <div class="section__breaker"></div>
 
         <div class="section">
-            <h2 id="o_mnie">O mnie</h2>
+            <h2 id="o_mnie">O MNIE</h2>
             <h4>Dowiedz się czegoś na mój temat</h4>
             <article>
                 <p>Urodziłem się 5&nbsp;czerwca&nbsp;1985&nbsp;r. w&nbsp;Rzeszowie. Jako dziecko i&nbsp;nastolatek
@@ -113,10 +125,10 @@
         <div class="section__breaker"></div>
 
         <div class="section">
-            <h2 id="uslugi">Usługi</h2>
+            <h2 id="uslugi">USŁUGI</h2>
             <h4>Dowiedz się czegoś o&nbsp;moich usługach</h4>
             <article>
-                <h6>Tłumaczenie</h6>
+                <h3>Tłumaczenie</h3>
                 <p>Jak w&nbsp;przypadku każdego tłumacza, jest to moja podstawowa usługa. Polega na przenoszeniu znaczeń
                     z&nbsp;jednego języka na drugi. Oferuję zarówno tłumaczenie z&nbsp;języka angielskiego na polski,
                     jak i&nbsp;z&nbsp;polskiego na angielski. Każde zlecenie jest wykonywane z&nbsp;użyciem specjalnego
@@ -124,12 +136,12 @@
                     tekstu pod względem całych zdań, jak i&nbsp;terminów. Na sam koniec, po przeczytaniu
                     i&nbsp;sprawdzeniu tekstu za pomocą tegoż oprogramowania, generuje się plik w&nbsp;języku docelowym,
                     który trafia do klienta.</p>
-                <h6>Korekta</h6>
+                <h3>Korekta</h3>
                 <p>Jak sama nazwa wskazuje, jest to sprawdzanie przetłumaczonego już tekstu pod względem językowym
                     (ortografia, interpunkcja, precyzja znaczeniowa itd.). Korekta może być wykonywania
                     w&nbsp;oprogramowaniu CAT, gdy klient czy tłumacz dostarczy plik dwujęzyczny. Jednak najczęściej
                     proces ten obejmuje skrupulatne sprawdzanie docelowego tekstu.</p>
-                <h6>Napisy</h6>
+                <h3>Napisy</h3>
                 <p>Każdy z&nbsp;nas chyba oglądał kiedyś film z&nbsp;napisami. Tego typu usługa polega na opracowaniu
                     właśnie takich napisów do filmu na podstawie tego, co tłumacz słyszy. Wymaga to dobrego rozumienia
                     tekstu ze słuchu i&nbsp;najczęściej jest wykonywane z&nbsp;użyciem słuchawek. Cała trudność polega
@@ -142,10 +154,10 @@
         <div class="section__breaker"></div>
 
         <div class="section">
-            <h2 id="cennik">Cennik</h2>
+            <h2 id="cennik">CENNIK</h2>
             <h4>Poznaj ceny moich usług</h4>
             <article>
-                <h6>Poniżej znajdziesz cennik moich usług</h6>
+                <h3>Poniżej znajdziesz cennik moich usług:</h3>
                 <table class="pricelist__table">
                     <tr>
                         <th>Usługa</th>
@@ -186,9 +198,9 @@
 
                     <!-- coolspan - rozszerzenie na szerokość Np. 3 kolumn rozpiętość kolumny; rowspan - rozpiętość wiersza w dół-->
                 </table><br>
-                <p style="text-indent: 0;"><b>Cennik obowiązujący na dzień:</b>
+                <h5><b>Cennik obowiązujący na dzień:</b>
                     <p style="text-indent: 0;" class="inserted__date"></p>
-                </p>
+                </h5>
 
 
             </article>
@@ -200,29 +212,31 @@
         <div class="section">
 
 
-            <h2 id="wycena">Wycena</h2>
+            <h2 id="wycena">WYCENA</h2>
             <h4>Dokonaj orientacyjnej wyceny żądanej usługi</h4>
-            
 
 
- <!--Summary window-->
-            
+
+            <!--Summary window-->
+
             <div class="summary__window">
-                <h3>Podsumowanie Twojej wyceny</h3>
+                <h3 class="summary__window--heading">Podsumowanie Twojej wyceny</h3>
                 <h4>Dane wyceniającego:</h4>
                 <p class="summary__window--submitter"></p>
 
                 <h4>Dane wyceny:</h4>
                 <p class="summary__window--query"></p>
 
+                <p class="summary__window--price"></p>
+
                 <button class="summary__window--button">OK</button>
             </div>
-            
 
 
-<!--Query form-->
 
-            <h6>Aby dokonać wyceny, skorzystaj z poniższego formularza.</h6>
+            <!--Query form-->
+
+            <h3>Aby dokonać wyceny, skorzystaj z poniższego formularza:</h3>
             <table class="query__table">
                 <form action="mailto:lukaszdydek@gmail.com" method="POST" class="form">
                     <tr>
@@ -292,15 +306,15 @@
                     </tr>
 
                     <tr>
-                        <td>
+                        <td class="form__complexity__container">
                             <label>Stopień zaawansowania</label>
                             <br>
-                            <input type="radio" name="form__complexity" value="Tekst ogólny"
-                                id="form__complexity--general"><label>Tekst
-                                ogólny</label>
-                            <input type="radio" name="form__complexity" value="Tekst specjalistyczny"
-                                id="form__complexity--specialized"><label>Tekst
-                                specjalistyczny</label>
+                            <label style="text-align: left;">Tekst
+                                ogólny<input type="radio" name="form__complexity" value="Tekst ogólny"
+                                id="form__complexity--general" style="width: 2em;"></label><br>
+                                <label style="text-align: left;">Tekst
+                                    specjalistyczny<input type="radio" name="form__complexity" value="Tekst specjalistyczny"
+                                id="form__complexity--specialized"style="width: 2em;"></label>
                         </td>
                     </tr>
 
@@ -343,7 +357,8 @@
                 </form>
             </table>
             <h5>Uwaga: Pola oznaczone czerwoną gwiazdką (<span style="color: red;">*</span>) są obowiązkowe.</h5>
-            <h5>Pola &bdquo;Stopień zaawansowania&rdquo; i &bdquo;Tryb wykonania&rdquo; nie są co prawda obowiązkowe. Mimo to, w celu uzyskania bardziej precyzyjnej kwoty wyceny, zalecam z nich skorzystać.</h5>
+            <h5>Pola &bdquo;Stopień zaawansowania&rdquo; i &bdquo;Tryb wykonania&rdquo; nie są co prawda obowiązkowe.
+                Mimo to, w celu uzyskania bardziej precyzyjnej kwoty wyceny, zalecam z nich skorzystać.</h5>
         </div>
 
 
@@ -351,16 +366,16 @@
 
 
         <div class="section">
-            <h2 id="kontakt">Kontakt</h2>
+            <h2 id="kontakt">KONTAKT</h2>
             <h4>Chcesz o coś zapytać? Skontaktuj się ze mną.</h4>
-            <h6>Dane kontaktowe</h6>
+            <h3>Dane kontaktowe</h3>
             <p style="text-indent: 0;">
                 Language Service Łukasz Dydek<br>
                 ul. Szarych Szeregów 3/25<br>
                 35-114 Rzeszów
             </p>
 
-            <h6>Komunikacja elektroniczna</h6>
+            <h3>Komunikacja elektroniczna i konta</h3>
             <table>
                 <tr>
 
@@ -388,7 +403,7 @@
 
         <div class="section__breaker"></div>
 
-    </div> <br><br>
+    </div> <br><br><br><br>
     <footer>Copyright 2020 © Łukasz Dydek Wszelkie prawa zastrzeżone.</footer>
     <br><br>
 
