@@ -150,8 +150,9 @@ td {
     border: solid rgba(0, 0, 250, 0.6) 0.40em;
     border-radius: 0.2em;
     z-index: 6;
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: snow;
+    font-family: Arial, Helvetica, sans-serif;
     transition: 0.8s ease-out;
 }
 
@@ -302,19 +303,22 @@ footer {
         border-radius: 0.2em;
     }
     #wycena__style:hover {
-        border-bottom: solid white 2px;
-        border-spacing: 20%;
+        border-bottom: solid white 3px;
+        border-bottom-left-radius: 0em;
+        border-bottom-right-radius: 0em;
     }
     .menu__title {
         display: none;
     }
+
     .progress__bar {
         position: sticky;
-        top: 59px;
+        top: 58px;
         background-color: rgb(0, 0, 250);
         height: 5px;
-        width: 0;
-        z-index: 5;
+        width: 0%;
+        max-width: 100%;
+        z-index: 10;
     }
 
     .main__goback {
@@ -361,10 +365,11 @@ footer {
         color: snow;
         font-family: Arial, Helvetica, sans-serif;
         background-color: transparent;
+        transition: ease-in-out 0.6s;
     }
     .download__section--button:hover {
         background-color: rgb(0, 0, 250);
-        transition: ease-in-out 0.4s;
+        transition: ease-in-out 0.6s;
     }
     .section__breaker {
         display: none;
@@ -377,8 +382,8 @@ footer {
         border: solid snow;
     }
     .query__table {
-        width: 60vw;
         margin: 0 auto;
+        width: 20vw;
         text-align: center;
         color: snow;
     }
@@ -409,10 +414,11 @@ footer {
     .form__button {
         width: 8vw;
         color: snow;
+        transition: ease-in-out 0.6s;
     }
     .form__button:hover {
         background-color: rgb(0, 0, 250);
-        transition: ease-in-out 0.4s;
+        transition: ease-in-out 0.6s;
     }
     footer {
         color: snow;

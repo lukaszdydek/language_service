@@ -33,9 +33,9 @@
         <a href="#kontakt" class="menu__item">KONTAKT</a>
         <p id="top" class="menu__title">MENU</p>
     </div>
-
+   
     <div class="progress__bar"></div>
-
+   
     <a href="#top" class="main__goback">Wróć</a>
     <div class="main__content">
 
@@ -225,7 +225,16 @@
                 <p class="summary__window--submitter"></p>
 
                 <h4>Dane wyceny:</h4>
-                <p class="summary__window--query"></p>
+                <p class="summary__window--query">
+                <span class="summary__window--service"></span>
+                <span class="summary__window--wordcount"></span>
+                <span class="summary__window--direction"></span>
+                <span class="summary__window--complexity"></span>
+                <span class="summary__window--speed"></span>
+                <span class="summary__window--deadline"></span>
+                <span class="summary__window--file"></span>
+                <span class="summary__window--remarks"></span>
+                </p>
 
                 <p class="summary__window--price"></p>
 
@@ -309,12 +318,12 @@
                         <td class="form__complexity__container">
                             <label>Stopień zaawansowania</label>
                             <br>
-                            <label style="text-align: left;">Tekst
+                            <tr><td><label>Tekst
                                 ogólny<input type="radio" name="form__complexity" value="Tekst ogólny"
-                                id="form__complexity--general" style="width: 2em;"></label><br>
-                                <label style="text-align: left;">Tekst
+                                id="form__complexity--general"></label></td></tr><br>
+                                <tr><td><label>Tekst
                                     specjalistyczny<input type="radio" name="form__complexity" value="Tekst specjalistyczny"
-                                id="form__complexity--specialized"style="width: 2em;"></label>
+                                id="form__complexity--specialized"></label></td></tr>
                         </td>
                     </tr>
 
@@ -402,11 +411,9 @@
         </div>
 
         <div class="section__breaker"></div>
-
-    </div> <br><br><br><br>
-    <footer>Copyright 2020 © Łukasz Dydek Wszelkie prawa zastrzeżone.</footer>
-    <br><br>
-
+        <br><br>
+        <footer>Copyright 2020 © Łukasz Dydek Wszelkie prawa zastrzeżone.</footer><br><br>
+    </div>
     <script src="main.js"></script>
 
 </body>

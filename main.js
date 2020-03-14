@@ -7,9 +7,15 @@ menu.addEventListener('click', function () {
 );
 
 
-/*progress bar*/
+/*scroll progress bar*/
 const progress__bar = document.querySelector('.progress__bar');
-progress__bar.addEventListener('scroll', function() {
+
+
+window.addEventListener('scroll', function() {
+
+    let scrolled = (document.documentElement.scrollTop/document.documentElement.scrollHeight) * 112;
+    progress__bar.style.width = scrolled + '%';
+    
     
 })
 
@@ -24,9 +30,6 @@ let month = date.getMonth()
 let year = date.getFullYear()
 
 date_placeholder.textContent = date.toLocaleDateString() + ' r.';
-
-
-
 
 
 /*quote generation*/
@@ -245,12 +248,43 @@ if (query_data.form__surname === "" && query_data.form__phone === "") {
     submitter.textContent = 'Dokonujesz wyceny jako ' + query_data.form__name + ' ' + query_data.form__surname + '. Twój adres e-mail to ' + query_data.form__email + ', a numer telefonu to ' + query_data.form__phone + '.';
 };
 
+/*query details summary*/
+/*query service*/
+const query__service = document.querySelector('.summary__window--service');
 
-const submitter__query = document.querySelector('.summary__window--query');
+query__service.textContent = 'Wybrana usługa to ' + query_data.form__service.toLowerCase() + ', ';
 
-submitter__query.textContent = 'Wybrana usługa to ' + query_data.form__service.toLowerCase() + '.';
+/*query wordcount*/
+const query__wordcount = document.querySelector('.summary__window--wordcount');
 
+if (query_data.form__service === "Napisy") {
+    query__wordcount.textContent = 'a czas trwania filmu wynosi: ' + query_data.form__captions + '.'
+} else {query__wordcount.textContent = 'a liczba słów wynosi: ' + query_data.form__wordcount + '.';
+}
 
+/*query direction*/
+const query__direction = document.querySelector('.summary__window--direction');
+
+if (query_data.form__direction === 'angielski > polski') {
+    query__direction.textContent = 'Tłumaczenie będzie wykonywane z języka angielskiego na polski.';
+} else if (query_data.form__direction === 'polski > angielski') {
+    query__direction.textContent = 'Tłumaczenie będzie wykonywane z języka polskiego na angielski.';
+} else {
+    query__direction.textContent = '';
+}
+
+/*query complexity*/
+const query__complexity = document.querySelector('.summary__window--complexity');
+
+if (complexity__general.checked) {
+    query__complexity.textContent = 'Jako stopień zaawansowania tekstu wybrano &bdquo;Tekst ogólny&rdquo;'
+} else if (complexity__specialized.checked) {
+    query__complexity.textContent = 'Jako stopień zaawansowania tekstu wybrano &bdquo;Tekst specjalistyczny&rdquo;'
+} else {
+    query__complexity.textContent = "";
+}
+
+/*query calculation value*/
 const submitter__price = document.querySelector('.summary__window--price');
 
 submitter__price.textContent = 'Wartość twojej wyceny to: ' + queryCalculate() + ' PLN';
