@@ -3,10 +3,21 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
 html {
     scroll-behavior: smooth;
+    scrollbar-color: snow black;
 }
+
+::-webkit-scrollbar {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: snow;
+    -webkit-border-radius: 0.2em;
+} 
 
 body {
     margin: 0;
+    
 }
 
 .top__line {
@@ -154,6 +165,7 @@ td {
     color: snow;
     font-family: Arial, Helvetica, sans-serif;
     transition: 0.8s ease-out;
+    overflow: scroll;
 }
 
 .summary__window__visible p {
@@ -162,6 +174,11 @@ td {
 
 .summary__window--heading {
     text-align: center;
+}
+
+.summary__window--query {
+    list-style: '✓ ';
+    line-height: 2em;
 }
 
 .query__table {

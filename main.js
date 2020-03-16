@@ -252,23 +252,23 @@ if (query_data.form__surname === "" && query_data.form__phone === "") {
 /*query service*/
 const query__service = document.querySelector('.summary__window--service');
 
-query__service.textContent = 'Wybrana usługa to ' + query_data.form__service.toLowerCase() + ', ';
+query__service.textContent = 'Wybrana usługa to ' + query_data.form__service.toLowerCase() + '.';
 
 /*query wordcount*/
 const query__wordcount = document.querySelector('.summary__window--wordcount');
 
 if (query_data.form__service === "Napisy") {
-    query__wordcount.textContent = 'a czas trwania filmu wynosi: ' + query_data.form__captions + '.'
-} else {query__wordcount.textContent = 'a liczba słów wynosi: ' + query_data.form__wordcount + '.';
+    query__wordcount.textContent = 'Czas trwania filmu wynosi: ' + query_data.form__captions + '.'
+} else {query__wordcount.textContent = 'Liczba słów wynosi: ' + query_data.form__wordcount + '.';
 }
 
 /*query direction*/
 const query__direction = document.querySelector('.summary__window--direction');
 
 if (query_data.form__direction === 'angielski > polski') {
-    query__direction.textContent = 'Tłumaczenie będzie wykonywane z języka angielskiego na polski.';
+    query__direction.textContent = 'Zlecenie będzie wykonywane z języka angielskiego na polski.';
 } else if (query_data.form__direction === 'polski > angielski') {
-    query__direction.textContent = 'Tłumaczenie będzie wykonywane z języka polskiego na angielski.';
+    query__direction.textContent = 'Zlecenie będzie wykonywane z języka polskiego na angielski.';
 } else {
     query__direction.textContent = '';
 }
@@ -277,11 +277,44 @@ if (query_data.form__direction === 'angielski > polski') {
 const query__complexity = document.querySelector('.summary__window--complexity');
 
 if (complexity__general.checked) {
-    query__complexity.textContent = 'Jako stopień zaawansowania tekstu wybrano &bdquo;Tekst ogólny&rdquo;'
+    query__complexity.textContent = 'Jako stopień zaawansowania tekstu wybrano Tekst ogólny.'
 } else if (complexity__specialized.checked) {
-    query__complexity.textContent = 'Jako stopień zaawansowania tekstu wybrano &bdquo;Tekst specjalistyczny&rdquo;'
+    query__complexity.textContent = 'Jako stopień zaawansowania tekstu wybrano Tekst specjalistyczny.'
 } else {
-    query__complexity.textContent = "";
+    query__complexity.textContent = '';
+}
+
+/*query speed*/
+const query__speed = document.querySelector('.summary__window--speed');
+if (query_data.form__speed === 'Normalny') {
+    query__speed.textContent = 'Wybrany został standardowy tryb realizacji zlecenia. Wybiera się go, jeżeli nie jest wymagane nazwyczajnie szybkie wykonanie usługi.';
+} else if (query_data.form__speed === 'Ekspresowy') {
+    query__speed.textContent = 'Wybrany został ekspresowy tryb realizacji zlecenia. Wybiera się go, jeżeli wymagane jest nazwyczajnie szybkie wykonanie usługi.';
+} else {
+    query__speed.textContent = '';
+}
+
+/*query deadline*/
+const query__deadline = document.querySelector('.summary__window--deadline');
+
+query__deadline.textContent = 'Żądany termin wykonania usługi to ' + query_data.form__deadline + '.';
+
+/*query file*/
+const query__file = document.querySelector('.summary__window--file');
+
+if (query_data.form__file === '') {
+    query__file.textContent = '';
+} else {
+    query__file.textContent = 'Załączony został plik: ' + form__file.files[0].name + '.'; 
+}
+
+/*query remarks*/
+const query__remarks = document.querySelector('.summary__window--remarks');
+
+if (query_data.form__remarks === '') {
+    query__remarks.textContent = '';
+} else {
+    query__remarks.textContent = 'Dodatkowe uwagi: ' + query_data.form__remarks; 
 }
 
 /*query calculation value*/
