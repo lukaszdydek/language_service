@@ -74,6 +74,16 @@ service.addEventListener('change', function() {
     } else {
         wordcount__item.classList.remove('form__wordcount__visible');
         captionsTime__item.classList.remove('form__captions__visible');
+       
+    }
+
+    if (wordcount__item.className === 'form__wordcount__invisible form__wordcount__visible') {
+        formTextNodes[4].setAttribute('required', 'true');
+    } else if (captionsTime__item.className === 'form__captions__invisible form__captions__visible') {
+        formTextNodes[5].setAttribute('required', 'true');
+    } else {
+        formTextNodes[4].removeAttribute('required', 'true');
+        formTextNodes[5].removeAttribute('required', 'true');
     }
 
 })
@@ -203,12 +213,24 @@ function queryCalculate() {
 
 for (i = 0; i < formTextNodes.length - 1; i++) {
 
-    /* validating the form
+
+    /* form validation */
+    
     if (formTextNodes[i].required && formTextNodes[i].value === '') {
         alert('Wypełnij wymagane pola!');
         return;
     };
-*/
+
+    if (service.value === '') {
+        alert('Wypełnij wymagane pola!');
+        return;
+    };
+
+    if (direction.value === '') {
+        alert('Wypełnij wymagane pola!');
+        return;
+    };
+
     /*populating the "query_data" object with form data*/
 
     let formTextNodesIds = formTextNodes[i].getAttribute('id');
@@ -249,6 +271,9 @@ if (query_data.form__surname === "" && query_data.form__phone === "") {
 };
 
 /*query details summary*/
+
+const query__summary = document.querySelector('.summary__window--query'); 
+
 /*query service*/
 const query__service = document.querySelector('.summary__window--service');
 
@@ -269,8 +294,6 @@ if (query_data.form__direction === 'angielski > polski') {
     query__direction.textContent = 'Zlecenie będzie wykonywane z języka angielskiego na polski.';
 } else if (query_data.form__direction === 'polski > angielski') {
     query__direction.textContent = 'Zlecenie będzie wykonywane z języka polskiego na angielski.';
-} else {
-    query__direction.textContent = '';
 }
 
 /*query complexity*/
@@ -282,6 +305,8 @@ if (complexity__general.checked) {
     query__complexity.textContent = 'Jako stopień zaawansowania tekstu wybrano Tekst specjalistyczny.'
 } else {
     query__complexity.textContent = '';
+    query__summary.removeChild(query__complexity);
+    
 }
 
 /*query speed*/
@@ -292,18 +317,24 @@ if (query_data.form__speed === 'Normalny') {
     query__speed.textContent = 'Wybrany został ekspresowy tryb realizacji zlecenia. Wybiera się go, jeżeli wymagane jest nazwyczajnie szybkie wykonanie usługi.';
 } else {
     query__speed.textContent = '';
+    query__summary.removeChild(query__speed);
 }
 
 /*query deadline*/
 const query__deadline = document.querySelector('.summary__window--deadline');
 
-query__deadline.textContent = 'Żądany termin wykonania usługi to ' + query_data.form__deadline + '.';
+if (query_data.form__deadline === '') {
+    query__deadline.textContent = '';
+    query__summary.removeChild(query__deadline);
+} else {query__deadline.textContent = 'Żądany termin wykonania usługi to ' + query_data.form__deadline + '.';
+}
 
 /*query file*/
 const query__file = document.querySelector('.summary__window--file');
 
 if (query_data.form__file === '') {
     query__file.textContent = '';
+    query__summary.removeChild(query__file);
 } else {
     query__file.textContent = 'Załączony został plik: ' + form__file.files[0].name + '.'; 
 }
@@ -313,6 +344,7 @@ const query__remarks = document.querySelector('.summary__window--remarks');
 
 if (query_data.form__remarks === '') {
     query__remarks.textContent = '';
+    query__summary.removeChild(query__remarks);
 } else {
     query__remarks.textContent = 'Dodatkowe uwagi: ' + query_data.form__remarks; 
 }

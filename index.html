@@ -237,8 +237,9 @@
                 </ul>
 
                 <p class="summary__window--price"></p>
-
+                <div style="text-align: center;">
                 <button class="summary__window--button">OK</button>
+                </div>
             </div>
 
 
@@ -251,7 +252,7 @@
                     <tr>
                         <td>
                             <label for="form__name" class="required">Imię</label><br>
-                            <input type="text" id="form__name" name="form__name">
+                            <input type="text" id="form__name" name="form__name" required="true">
                         </td>
                     </tr>
 
@@ -265,7 +266,7 @@
                     <tr>
                         <td>
                             <label for="form__email" class="required">E-mail</label><br>
-                            <input type="email" id="form__email" name="form__email">
+                            <input type="email" id="form__email" name="form__email" required="true">
                         </td>
                     </tr>
 
@@ -280,7 +281,7 @@
                     <tr>
                         <td>
                             <label for="form__service" class="required">Usługa</label><br>
-                            <select name="form__service" id="form__service">
+                            <select name="form__service" id="form__service" required="true">
                                 <option value=""></option>
                                 <option value="Tłumaczenie">Tłumaczenie</option>
                                 <option value="Korekta">Korekta</option>
@@ -306,7 +307,7 @@
                     <tr>
                         <td>
                             <label for="form__direction" class="required">Kierunek tłumaczenia</label><br>
-                            <select name="form__direction" id="form__direction">
+                            <select name="form__direction" id="form__direction" required="true">
                                 <option value=""></option>
                                 <option value="angielski > polski">angielski > polski</option>
                                 <option value="polski > angielski">polski > angielski</option>

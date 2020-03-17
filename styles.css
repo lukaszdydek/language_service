@@ -158,10 +158,10 @@ td {
     left: 5%;
     margin: 5% auto;
     padding: 0.5em;
-    border: solid rgba(0, 0, 250, 0.6) 0.40em;
+    border: solid rgba(0, 0, 250, 0.6) 0.10em;
     border-radius: 0.2em;
     z-index: 6;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.96);
     color: snow;
     font-family: Arial, Helvetica, sans-serif;
     transition: 0.8s ease-out;
@@ -176,10 +176,23 @@ td {
     text-align: center;
 }
 
-.summary__window--query {
+.summary__window--query li {
     list-style: '✓ ';
     line-height: 2em;
 }
+
+.summary__window button {
+    border: solid snow 3px;
+        border-radius: 1em;
+        color: snow;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: transparent;
+        transition: ease-in-out 0.6s;
+    }
+.summary__window button:hover {
+        background-color: rgb(0, 0, 250);
+        transition: ease-in-out 0.6s;
+    }
 
 .query__table {
     width: 100vw;
